@@ -13,12 +13,10 @@ async def on_ready():
 	print(client.user.name)
 	print(client.user.id)
 
-count = 0
 
 @client.command()
-async def ma(ctx, count=count):
-	if count < 2 and count == 0 and ctx.message.author.id == 336068309789310979:
-		count += 1
+async def ma(ctx):
+	if ctx.message.author.id == 336068309789310979:
 		await ctx.send('Wished by <@487935377219256343>')
 		embed = discord.Embed(
 			description='**Monkey D. Luffy** \n\nOne Piece\n**565**<:kakera:748810456671453296>',
@@ -47,8 +45,10 @@ async def ma(ctx, count=count):
 			print('Rheana reacted')
 			await msg.edit(embed=new_embed)
 			await ctx.send('Welcome to the Kingdom of ♕ **Reinn_sama, Monkey D. Luffy**! :european_castle:')
-	elif count < 2 and count == 1 and ctx.message.author.id == 336068309789310979:
-		count += 1
+
+@client.command()
+async def wa(ctx):	
+	if ctx.message.author.id == 336068309789310979:
 		await ctx.send('Wished by <@487935377219256343>, <@336068309789310979>, <@730968136219885608>')
 		embed = discord.Embed(
 			description='**Origami Tobiichi** \n\nDate A Live\n**389**<:kakera:748810456671453296>',
@@ -77,5 +77,5 @@ async def ma(ctx, count=count):
 			print('Vince reacted')
 			await msg.edit(embed=new_embed)
 			await ctx.send('<:rinshoc:744158260696842291>**Origami Tobiichi** ay na sa harem na RIN ni **Eagl3yeD**<:rinshoc:744158260696842291>')
-#
+
 client.run(os.environ['TOKEN'])
