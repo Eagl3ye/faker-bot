@@ -14,8 +14,9 @@ async def on_ready():
 	print(client.user.id)
 
 count = 0
+
 @client.command()
-async def ma(ctx):
+async def ma(ctx, count=count):
 	if count < 2 and count == 0 and ctx.message.author.id == 336068309789310979:
 		count += 1
 		await ctx.send('Wished by <@487935377219256343>')
@@ -46,7 +47,7 @@ async def ma(ctx):
 			print('Rheana reacted')
 			await msg.edit(embed=new_embed)
 			await ctx.send('Welcome to the Kingdom of ♕ **Reinn_sama, Monkey D. Luffy**! :european_castle:')
-	if count < 2 and count == 1 and ctx.message.author.id == 336068309789310979:
+	elif count < 2 and count == 1 and ctx.message.author.id == 336068309789310979:
 		count += 1
 		await ctx.send('Wished by <@487935377219256343>, <@336068309789310979>, <@730968136219885608>')
 		embed = discord.Embed(
